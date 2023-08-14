@@ -1,4 +1,5 @@
 'use client';
+
 import {useState} from 'react'
 import {useSession} from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -18,7 +19,6 @@ const CreatePrompt = () => {
     const createPrompt = async (e) => {
         e.preventDefault();
         setSubmitting(true);
-
         try {
             const response = await fetch("/api/prompt/new", {
               method: "POST",
